@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="index">
+
+    <head>
+
+        <title>HobbyJoin</title>
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-touch.min.js"></script>
+        <script src="scripts/ui-bootstrap.min.js"></script>
+        
+        <link href="styles/base.css" rel="stylesheet" type="text/css" />
+        <link href="styles/font.css" rel="stylesheet" type="text/css" />
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="utf-8">
+        
+        <script src="info/index.js"></script>
+
+        <link href="styles/index.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+
+    <body>
+        
+        <div class="line light_blue"></div>
+        <div id="logo">
+            <img src="imgs/logo.png" />
+        </div>
+        <div class="line dark_blue"></div>
+        
+        <div id="search" ng-controller="TypeCtrl">
+            <form action="search.html" method="get">
+                <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" ng-model="selected" typeahead="card as card.name for card in cards | filter:$viewValue | limitTo:5" typeahead-min-length="3" typeahead-on-select="console()" />
+            </form>
+        </div>
+        
+        <ul ng-controller="MenuCtrl">
+            <li ng-repeat="item in menu" class="item text text2" ng-click="goto(item.link)">
+                <img src="imgs/{{item.link}}.png" class=img />
+                {{item.text}}
+            </li>
+        </ul>
+        
+    </body>
+
+</html>
