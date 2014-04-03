@@ -1,4 +1,4 @@
-angular.module('adv_search', [])
+angular.module('adv_search', ['ngTouch'])
 .controller('ManaCtrl', ['$scope', '$window', function($scope, $window) {
      $scope.manas = [
          {link:'w', checked:false},

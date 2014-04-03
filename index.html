@@ -32,12 +32,12 @@
         
         <div id="search" ng-controller="TypeCtrl">
             <form action="search.html" method="get">
-                <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" ng-model="selected" typeahead="card as card.n for card in cards | filter:$viewValue | limitTo:5" typeahead-min-length="3" typeahead-on-select="console()" />
+                <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" ng-model="selected" typeahead="card as card.n for card in cards | filter:$viewValue | limitTo:8" typeahead-min-length="3" typeahead-on-select="console()" />
             </form>
         </div>
         
         <ul ng-controller="MenuCtrl">
-            <li ng-repeat="item in menu" class="item text text2" ng-click="goto(item.link)">
+            <li ng-repeat="item in menu" class="item text text2 line2" ng-click="goto(item.link)">
                 <img src="imgs/{{item.link}}.png" class=img />
                 {{item.text}}
             </li>

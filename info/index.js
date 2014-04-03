@@ -1,4 +1,4 @@
-angular.module('index', ['ui.bootstrap'])
+angular.module('index', ['ui.bootstrap', 'ngTouch'])
 .controller('MenuCtrl', ['$scope', '$window', function($scope, $window) {
      $scope.menu = [
          {text:'Busca avançada', link:'adv_search'},
