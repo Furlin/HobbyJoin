@@ -1,47 +1,9 @@
-#logo {
+#logo_large {
     text-align: center;
     height: 80px;
 }
 
-#search {
-    margin-top: 5%;
-    margin-bottom: 2%;
-    width: 100%;
-    text-align: center;
-}
-
-.dropdown-menu {
-    font-family: "MyriadPro";
-    position: absolute;
-    width: 94%;
-    text-align: left;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    font-size: 32px;
-    line-height: 32px;
-}
-
-.dropdown-menu li {
-    padding: 8px;
-}
-
-.dropdown-menu li strong {
-    font-weight: normal;
-    color: #06f;
-}
-
-#search input {
-    text-indent: 8px;
-    padding-top: 4px;
-    width: 94%;
-    height: 40px;
-    border: 1px solid #000;
-    border-radius: 8px;
-    background: url(../imgs/search.png) no-repeat right;
-    background-size: contain;
-}
-
-#logo img {
+#logo_large img {
     margin-top: 16px;
     height: 48px;
 }
@@ -64,35 +26,13 @@
 
 @media (min-width:640px) {
     
-    #logo {
+    #logo_large {
         height: 160px;
     }
     
-    #logo img {
+    #logo_large img {
         margin-top: 33px;
         height: 94px;
-    }
-    
-    #search {
-        margin-top: 2%;
-    }
-    
-    #search input {
-        width: 96%;
-        height: 80px;
-        border-radius: 12px;
-        text-indent: 12px;
-        padding-top: 8px;
-    }
-    
-    .dropdown-menu {
-        width: 96%;
-        font-size: 64px;
-        line-height: 64px;
-    }
-
-    .dropdown-menu li {
-        padding: 12px;
     }
     
     .img {
@@ -110,35 +50,13 @@
 
 @media (min-width:480px) and (max-width:639px) {
     
-    #logo {
+    #logo_large {
         height: 120px;
     }
     
-    #logo img {
+    #logo_large img {
         margin-top: 25px;
         height: 70px;
-    }
-     
-    #search {
-        margin-top: 2.5%;
-    }
-    
-    #search input {
-        width: 95%;
-        height: 60px;
-        border-radius: 10px;
-        text-indent: 10px;
-        padding-top: 6px;
-    }
-    
-    .dropdown-menu {
-        width: 95%;
-        font-size: 48px;
-        line-height: 48px;
-    }
-
-    .dropdown-menu li {
-        padding: 10px;
     }
     
     .img {

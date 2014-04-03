@@ -1,0 +1,41 @@
+#mana {
+    display:table;
+    width:100%;
+    table-layout: fixed;
+}
+#mana span {
+    display:table-cell;
+    text-align:center;
+}
+
+.mana {
+    height: 36px;
+    width: 36px;
+    opacity: 0.5;
+}
+
+.selected {
+    opacity: 1;
+}
+
+@media (min-width:640px) {
+    #mana_container {
+        width: 96%;
+        padding-top: 12px;
+    }
+    .mana {
+        height: 72px;
+        width: 72px;
+    }
+}
+
+@media (min-width:480px) and (max-width:639px) {
+    #mana_container {
+        width: 95%;
+        padding-top: 10px;
+    }
+    .mana {
+        height: 54px;
+        width: 54px;
+    }
+}

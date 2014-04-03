@@ -18,20 +18,21 @@
         <script src="info/index.js"></script>
 
         <link href="styles/index.css" rel="stylesheet" type="text/css" />
-        
+        <link href="styles/search.css" rel="stylesheet" type="text/css" />
+
     </head>
 
     <body>
         
         <div class="line light_blue"></div>
-        <div id="logo">
-            <img src="imgs/logo.png" />
+        <div id="logo_large">
+            <img src="imgs/logo_large.png" />
         </div>
         <div class="line dark_blue"></div>
         
         <div id="search" ng-controller="TypeCtrl">
             <form action="search.html" method="get">
-                <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" ng-model="selected" typeahead="card as card.name for card in cards | filter:$viewValue | limitTo:5" typeahead-min-length="3" typeahead-on-select="console()" />
+                <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" ng-model="selected" typeahead="card as card.n for card in cards | filter:$viewValue | limitTo:5" typeahead-min-length="3" typeahead-on-select="console()" />
             </form>
         </div>
         
