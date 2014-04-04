@@ -1,0 +1,10 @@
+[
+        {text:'Artefato', name:'art', checked:false, size:3},
+        {text:'Criatura', name:'cre', checked:false, size:3},
+        {text:'Encantamento', name:'enc', checked:false, size:3},
+        {text:'Feitiço', name:'sor', checked:false, size:3},
+        {text:'Lendário', name:'leg', checked:false, size:3},
+        {text:'Mágica Instantânea', name:'mag', checked:false, size:3},
+        {text:'Planinalta', name:'pla', checked:false, size:3},
+        {text:'Terreno', name:'lnd', checked:false, size:3}
+    ];

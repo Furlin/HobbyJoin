@@ -1,9 +1,9 @@
 select {
     width: 95%;
-    padding: 7px;
-    padding-left: 60px;
+    padding: 10px;
+    padding-left: 40px;
     border: 1px solid #999;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 2.5%;
     background: url(../imgs/down.png) no-repeat #eee;
     background-size: contain;
@@ -29,8 +29,8 @@ select {
 }
 
 .mana {
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     opacity: 0.45;
 }
 
@@ -39,7 +39,7 @@ select {
 }
 
 .header {
-    padding: 7px;
+    padding: 10px;
     padding-left: 44px;
     border: 1px solid #999;
     border-radius: 5px;
@@ -63,6 +63,9 @@ select {
     background: url(../imgs/checkbox.png) no-repeat #fafafa;
     background-position: -3px 0;
     background-size: contain;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .checked {
@@ -82,11 +85,11 @@ select {
         padding-top: 12px;
     }
     .mana {
-        height: 72px;
-        width: 72px;
+        height: 80px;
+        width: 80px;
     }
-    .header {
-        padding: 11px;
+    .header, select {
+        padding: 12px;
         padding-left: 80px;
         border-radius: 12px;
     }
@@ -108,11 +111,11 @@ select {
         padding-top: 10px;
     }
     .mana {
-        height: 54px;
-        width: 54px;
+        height: 60px;
+        width: 60px;
     }
-    .header {
-        padding: 9px;
+    .header, select {
+        padding: 11px;
         padding-left: 64px;
         border-radius: 10px;
     }
