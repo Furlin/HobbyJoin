@@ -16,6 +16,7 @@
         <meta charset="utf-8">
         
         <script src="info/adv_search.js"></script>
+        <script src="scripts/angular-animate.min.js"></script>
 
         <link href="styles/adv_search.css" rel="stylesheet" type="text/css" />
         <link href="styles/search.css" rel="stylesheet" type="text/css" />
@@ -24,25 +25,54 @@
 
     <body>
         
-        <div id="header" class="light_blue">
-            <img src="imgs/logo.png" id="logo">
+        <div id="header" class="light_blue" ng-controller="HomeCtrl">
+            <img src="imgs/logo.png" id="logo" ng-click="goHome()">
             <img src="imgs/menu.png" id="menu">
         </div>
         <div class="line dark_blue"></div>
                     
         <form action="search.html" method="get">
 
-            <div id="search">
-                <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" />
-            </div>
+        <div id="search">
+            <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" />
+        </div>
+
+        <div id="mana" ng-controller="ManaCtrl">
+            <span ng-repeat="mana in manas">
+                <img src="imgs/symbols/{{mana.link}}.png" class="mana" ng-class="{selected:mana.checked}" ng-click="check(mana)" />
+                <input type="checkbox" name="{{mana.link}}" class="fake" id="{{mana.link}}" ng-checked="mana.checked" />
+            </span>
+        </div>
+        
+        <div id="accordion" ng-controller="AccordionCtrl">
             
-            <div id="mana" ng-controller="ManaCtrl">
-                    <span ng-repeat="mana in manas">
-                        <img src="imgs/symbols/{{mana.link}}.png" class="mana" ng-class="{selected:mana.checked}" ng-click="toggle(mana)" />
-                        <input type="checkbox" name="{{mana.link}}" class="fake" id="{{mana.link}}" ng-checked="mana.checked" />
-                    </span>
+            <div id="colors" class="text text2 header line2" ng-class="{header_open:color}" ng-click="colorOpen()" >CORES</div>
+            <div id="colors-collapse" class="accordion" ng-show="color">
+                <ul>
+                    <li ng-repeat="color in colors" class="menu text text{{color.size}} line2" ng-class="{'last':$last, 'checked':color.checked}" ng-click="check(color)" >{{color.text}}<input type="checkbox" name="{{color.name}}" class="fake" id="{{color.name}}" ng-checked="color.checked" /></li>
                 </ul>
             </div>
+            
+            <div id="types" class="text text2 header line2" ng-class="{header_open:type}" ng-click="typeOpen()" >TIPOS</div>
+            <div id="types-collapse" class="accordion" ng-show="type">
+                <ul>
+                    <li ng-repeat="type in types" class="menu text text{{type.size}} line2" ng-class="{'last':$last, 'checked':type.checked}" ng-click="check(type)" >{{type.text}}<input type="checkbox" name="{{type.name}}" class="fake" id="{{type.name}}" ng-checked="type.checked" /></li>
+                </ul>
+            </div>
+            
+            <div id="rarities" class="text text2 header line2" ng-class="{header_open:rarity}" ng-click="rarityOpen()" >RARIDADE</div>
+            <div id="types-collapse" class="accordion" ng-show="rarity">
+                <ul>
+                    <li ng-repeat="rarity in rarities" class="menu text text{{rarity.size}} line2" ng-class="{'last':$last, 'checked':rarity.checked}" ng-click="check(rarity)" >{{rarity.text}}<input type="checkbox" name="{{rarity.name}}" class="fake" id="{{rarity.name}}" ng-checked="rarity.checked" /></li>
+                </ul>
+            </div>
+            
+            <select class="text text2 line2" >
+                <option selected>EDIÇÃO</option>
+                
+            </select>
+            
+        </div>
             
         </form>
 

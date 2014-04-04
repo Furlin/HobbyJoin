@@ -1,8 +1,28 @@
+select {
+    width: 95%;
+    padding: 7px;
+    padding-left: 60px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    margin: 2.5%;
+    background: url(../imgs/down.png) no-repeat #eee;
+    background-size: contain;
+    margin-bottom: 0;
+   -webkit-appearance: none;
+}
+
+.accordion {
+    margin: 2.5%;
+    margin-top: 0;
+}
+
 #mana {
     display:table;
     width:100%;
     table-layout: fixed;
+    padding-top: 8px;
 }
+
 #mana span {
     display:table-cell;
     text-align:center;
@@ -11,11 +31,49 @@
 .mana {
     height: 36px;
     width: 36px;
-    opacity: 0.5;
+    opacity: 0.45;
 }
 
 .selected {
     opacity: 1;
+}
+
+.header {
+    padding: 7px;
+    padding-left: 44px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin: 2.5%;
+    background: url(../imgs/down.png) no-repeat #eee;
+    background-size: contain;
+    margin-bottom: 0;
+}
+
+.header_open {
+    background: url(../imgs/up.png) no-repeat #eee;
+    background-size: contain;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 0;
+}
+
+.menu {
+    border: 1px solid #999;
+    border-bottom: 0;
+    padding: 8px 0 8px 40px;
+    background: url(../imgs/checkbox.png) no-repeat #fafafa;
+    background-position: -3px 0;
+    background-size: contain;
+}
+
+.checked {
+    background: url(../imgs/checked.png) no-repeat #fafafa;
+    background-position: -3px 0;
+    background-size: contain;
+}
+
+.last {
+    border-bottom: 1px solid #999;
+    border-radius: 0 0 5px 5px;
 }
 
 @media (min-width:640px) {
@@ -27,6 +85,21 @@
         height: 72px;
         width: 72px;
     }
+    .header {
+        padding: 11px;
+        padding-left: 80px;
+        border-radius: 12px;
+    }
+    .header_open {
+        border-radius: 12px 12px 0 0;
+    }
+    .last {
+        border-radius: 0 0 12px 12px;
+    }
+    .menu {
+        padding: 10px 0 10px 72px;
+        background-position: -3px 0;
+    }
 }
 
 @media (min-width:480px) and (max-width:639px) {
@@ -37,5 +110,20 @@
     .mana {
         height: 54px;
         width: 54px;
+    }
+    .header {
+        padding: 9px;
+        padding-left: 64px;
+        border-radius: 10px;
+    }
+    .header_open {
+        border-radius: 10px 10px 0 0;
+    }
+    .last {
+        border-radius: 0 0 10px 10px;
+    }
+    .menu {
+        padding: 8px 0 8px 56px;
+        background-position: -3px 0;
     }
 }
