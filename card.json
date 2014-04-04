@@ -1,0 +1,31 @@
+[
+    {
+        "name_br" : "Jace, o Escutor de Mentes",
+        "name_us" : "Jace, the Mind Sculptor",
+        "img" : "imgs/card.png",
+        "sets" : [
+            {"set" : "set 1"},
+            {"set" : "set 2"}
+        ],
+        "prices" : [
+            {"store" : "Porto Livre", "price" : "R$ 109,90"},
+            {"store" : "Let's Collect", "price" : "R$ 119,90"},
+            {"store" : "Saga Livraria", "price" : "R$ 129,90"},
+            {"store" : "Bazar de Bagda", "price" : "R$ 139,90"},
+            {"store" : "Preço Médio", "price" : "R$ 124,90"}
+        ],
+        "rarity" : "Mítica",
+        "costs" : [
+            {"img" : "x"},
+            {"img" : "u"},
+            {"img" : "u"}
+        ],
+        "converted" : 4,
+        "type" : "Planewalker - Jace",
+        "text_us" : "+2: Look at the top card of target player's library. You may put that card on the bottom of that player's library.<br />0: Draw three cards, then put two cards from your hand on top of your library in any order.<br />-1: Return target creature to its owner's hand.<br />-12: Exile all cards from target player's library, then that player shuffles his or her hand into his or her library.",
+        "text_br" : "+2: Olhe o card do topo do grimório do jogador alvo. Você pode colocar aquele card no fundo do grimório daquele jogador.<br />0: Compre três cards, depois coloque dois cards de sua mão no topo de seu grimório em qualquer ordem.<br />-1: Devolva a criatura alvo para a mão de seu dono.<br />-12: Exile todos os cards do grimório do jogador alvo, depois aquele jogador embaralha sua mão no próprio grimório.",
+        "power" : 2,
+        "resist" : 4,
+        "loyalty" : 5
+    }
+]

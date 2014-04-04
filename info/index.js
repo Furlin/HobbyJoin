@@ -4,7 +4,7 @@ angular.module('index', ['ui.bootstrap', 'ngTouch'])
          {text:'Busca avançada', link:'adv_search'},
          {text:'Busca de decks', link:'deck_search'},
          {text:'Preferências', link:'pref'},
-         {text:'Sobre o HobbyJoin', link:'info'}
+         {text:'Sobre o HobbyJoin', link:'card'}
      ];
     
     $scope.goto = function(link) {

@@ -1,0 +1,169 @@
+.name {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#set {
+    margin: 10px 0 0 5px;
+    width: 55%;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 3px 0;
+    color: #000;
+    -webkit-appearance: none;
+}
+
+.enabled {
+    background: url(../imgs/down.png) no-repeat right #fff;
+    background-size: contain;
+}
+
+#lang {
+    float: right;
+    width: 30px;
+    margin: 5px;
+}
+
+#price {
+    width: 55%;
+    margin: 5px 0 0 5px;
+    padding: 0;
+    border-collapse:collapse;
+}
+
+#price td {
+    padding: 5px 0;
+    border-bottom: 1px solid #000;
+}
+
+.best {
+    border-top: 1px solid #000;
+    background-color: #afa;
+}
+
+.avrg {
+    background-color: #ff9;
+}
+
+#img {
+    float: right;
+    margin: 10px 5px 0 0;
+    width: 40%;
+}
+
+#rarity {
+    margin-left: 7px;
+    float: left;
+}
+
+.inline {
+    display: inline-block;
+}
+
+#cost {
+    margin-left: 5%;
+    float: left;
+    display: inline-block;
+}
+
+#type {
+    margin: 7px;
+    margin-top: 0px;
+}
+
+.info {
+    margin: 7px;
+    margin-top: 10px;
+}
+
+#text {
+    margin: 7px;
+    margin-top: 10px;
+    margin-right: 40px;
+    text-align: justify;
+}
+
+#cost img {
+    height: 24px;
+    vertical-align: bottom;
+    margin: 0 3px;
+}
+
+@media (min-width:640px) {
+    #lang {
+        width: 60px;
+        margin: 10px;
+    }
+    #text {
+        margin: 10px;
+        margin-top: 20px;
+        margin-right: 80px;
+    }
+    .info {
+        margin: 10px;
+        margin-top: 20px;
+    }
+    #type {
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .name {
+        margin-bottom: 8px;
+    }
+    #set {
+        margin: 10px 0 0 10px;
+        border-radius: 8px;
+        padding: 8px 0;
+    }
+    #price td {
+        padding: 10px 0;
+    }
+    #price {
+        margin-left: 10px;
+    }
+    #img {
+        margin-right: 10px;
+    }
+    #cost img {
+        height: 48px;
+        margin: 0 5px;
+    }
+}
+@media (min-width:480px)  and (max-width:639px){
+    #lang {
+        width: 46px;
+        margin: 7px;
+    }
+    .info {
+        margin-top: 15px;
+    }
+    #text {
+        margin-top: 15px;
+        margin-right: 60px;
+    }
+    #type {
+        margin-top: 15px;
+    }
+    .name {
+        margin-bottom: 5px;
+    }
+    #set {
+        margin: 10px 0 0 7px;
+        border-radius: 6px;
+        padding: 5px 0;
+    }
+    #price td {
+        padding: 7px 0;
+    }
+    #price {
+        margin-left: 7px;
+    }
+    #img {
+        margin-right: 7px;
+    }
+    #cost img {
+        height: 32px;
+        margin: 0 4px;
+    }
+}
