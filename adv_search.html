@@ -46,21 +46,21 @@
         
         <div id="accordion" ng-controller="AccordionCtrl">
             
-            <div id="colors" class="text text2 header line2" ng-class="{header_open:color}" ng-click="color = !color" >CORES</div>
+            <div id="colors" class="text text2 header line2" ng-class="{header_open:color}" ng-click="color = !color" >Cores</div>
             <div id="colors-collapse" class="accordion" ng-show="color">
                 <ul>
                     <li ng-repeat="color in colors" class="menu text text{{color.size}} line2" ng-class="{'last':$last, 'checked':color.checked}" ng-click="check(color)" >{{color.text}}<input type="checkbox" name="{{color.name}}" class="fake" id="{{color.name}}" ng-checked="color.checked" /></li>
                 </ul>
             </div>
             
-            <div id="types" class="text text2 header line2" ng-class="{header_open:type}" ng-click="type = !type" >TIPOS</div>
+            <div id="types" class="text text2 header line2" ng-class="{header_open:type}" ng-click="type = !type" >Tipos</div>
             <div id="types-collapse" class="accordion" ng-show="type">
                 <ul>
                     <li ng-repeat="type in types" class="menu text text{{type.size}} line2" ng-class="{'last':$last, 'checked':type.checked}" ng-click="check(type)" >{{type.text}}<input type="checkbox" name="{{type.name}}" class="fake" id="{{type.name}}" ng-checked="type.checked" /></li>
                 </ul>
             </div>
             
-            <div id="rarities" class="text text2 header line2" ng-class="{header_open:rarity}" ng-click="rarity = !rarity" >RARIDADE</div>
+            <div id="rarities" class="text text2 header line2" ng-class="{header_open:rarity}" ng-click="rarity = !rarity" >Raridade</div>
             <div id="types-collapse" class="accordion" ng-show="rarity">
                 <ul>
                     <li ng-repeat="rarity in rarities" class="menu text text{{rarity.size}} line2" ng-class="{'last':$last, 'checked':rarity.checked}" ng-click="check(rarity)" >{{rarity.text}}<input type="checkbox" name="{{rarity.name}}" class="fake" id="{{rarity.name}}" ng-checked="rarity.checked" /></li>
@@ -68,10 +68,50 @@
             </div>
             
             <select class="text text2 line2" name="set" >
-                <option value="0" selected>EDIÇÃO</option>
+                <option value="0" selected>Edição</option>
                 <option ng-repeat="set in sets" value="{{set.id}}">{{set.set}}</option>
             </select>
             
+            <div id="prices" class="text text2 header line2" ng-class="{header_open:price}" ng-click="price = !price" >Preços</div>
+            <div id="prices-collapse" class="accordion" ng-show="price">
+                <ul>
+                    <li class="menu_nocheck text text3 line2" >
+                        <table class="menu_table">
+                            <tr>
+                                <td>Preço mínimo:</td>
+                                <td>R$ <input type="number" name="price_min" class="text3" placeholder="0"></td>
+                            </tr>
+                            <tr>
+                                <td>Preço máximo:</td>
+                                <td>R$ <input type="number" name="price_max" class="text3" placeholder="100"></td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="powers" class="text text2 header line2" ng-class="{header_open:power}" ng-click="power = !power" >Específicos</div>
+            <div id="prices-collapse" class="accordion" ng-show="power">
+                <ul>
+                    <li class="menu_mid text text3 line2" >
+                        Poder entre: <br />
+                        <input type="number" name="power1" class="text3" placeholder="min"> e
+                        <input type="number" name="power2" class="text3" placeholder="máx">
+                    </li>
+                    <li class="menu_mid text text3 line2" >
+                        Resistência entre: <br />
+                        <input type="number" name="res1" class="text3" placeholder="min"> e
+                        <input type="number" name="res2" class="text3" placeholder="máx">
+                    </li>
+                    <li class="menu_nocheck text text3 line2" >
+                        Lealdade entre: <br />
+                        <input type="number" name="loyal1" class="text3" placeholder="min"> e
+                        <input type="number" name="loyal2" class="text3" placeholder="máx">
+                    </li>
+                </ul>
+            </div>
+            
+            <input type="submit" class="text text2 submit line2" value="BUSCAR">
         </div>
             
         </form>

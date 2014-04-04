@@ -1,6 +1,6 @@
 select {
     width: 95%;
-    padding: 15px 10px 5px 44px;
+    padding: 12px 10px 8px 44px;
     border: 1px solid #999;
     border-radius: 5px;
     margin: 2.5%;
@@ -38,13 +38,21 @@ select {
 }
 
 .header {
-    padding: 15px 10px 5px 44px;
+    padding: 12px 10px 8px 44px;
     border: 1px solid #999;
     border-radius: 5px;
     margin: 2.5%;
     background: url(../imgs/down.png) no-repeat #eee;
     background-size: contain;
     margin-bottom: 0;
+}
+
+.submit {
+    padding: 12px 10px 8px 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin: 2.5%;
+    width: 95%;
 }
 
 .header_open {
@@ -66,6 +74,22 @@ select {
     overflow: hidden;
 }
 
+.menu_nocheck {
+    border: 1px solid #999;
+    border-radius: 0 0 5px 5px;
+    padding: 8px 0 8px 8px;
+}
+
+.menu_mid {
+    border: 1px solid #999;
+    border-bottom: 0;
+    padding: 8px 0 8px 8px;
+}
+
+.menu_nocheck input, .menu_mid input {
+    width: 3em;
+}
+
 .checked {
     background: url(../imgs/checked.png) no-repeat #fafafa;
     background-position: -3px 0;
@@ -82,6 +106,11 @@ select {
         width: 96%;
         padding-top: 12px;
     }
+    .submit {
+        border-radius: 12px;
+        margin: 2%;
+        width: 96%;
+    }
     .mana {
         height: 80px;
         width: 80px;
@@ -94,6 +123,7 @@ select {
     .header_open {
         border-radius: 12px 12px 0 0;
     }
+    
     .last {
         border-radius: 0 0 12px 12px;
     }
@@ -116,6 +146,11 @@ select {
         padding: 11px;
         padding-left: 64px;
         border-radius: 10px;
+    }
+    .submit {
+        border-radius: 10px;
+        margin: 2.5%;
+        width: 95%;
     }
     .header_open {
         border-radius: 10px 10px 0 0;
