@@ -7,7 +7,7 @@ angular.module('card', ['ngTouch'])
     
 }])
 .controller('CardCtrl', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-    $http.get('card.json')
+    $http.get('http://localhost/Apps/HobbyJoin/card.json')
     .success(function (data, status, headers, config) {
         $scope.card = data;
         $scope.lang = 'none';

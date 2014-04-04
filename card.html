@@ -39,8 +39,8 @@
         </div>
 
         <div>
-            <img src="{{card[0].img}}" id="img">
-            
+            <img src="{{card[0].img_br}}" id="img" ng-if="lang == 'br'" />
+            <img src="{{card[0].img_us}}" id="img" ng-if="lang == 'us'" />
             
             <select disabled id="set" class="text text4" ng-if="card[0].sets.length == 1">
                 <option ng-repeat="set in card[0].sets">{{set.set}}</option>

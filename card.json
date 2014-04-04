@@ -2,7 +2,8 @@
     {
         "name_br" : "Jace, o Escutor de Mentes",
         "name_us" : "Jace, the Mind Sculptor",
-        "img" : "imgs/card.png",
+        "img_br" : "http://furlin.org/__hobbyon/imgs/cards/br/WWK/jace_the_mind_sculptor.jpg",
+        "img_us" : "http://furlin.org/__hobbyon/imgs/cards/us/WWK/jace_the_mind_sculptor.jpg",
         "sets" : [
             {"set" : "set 1"},
             {"set" : "set 2"}
