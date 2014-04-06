@@ -11,6 +11,10 @@ angular.module('card', ['ngTouch'])
     .success(function (data, status, headers, config) {
         $scope.card = data;
         $scope.lang = 'none';
+        $scope.big = false;
+        $scope.bebig = function () {
+            $scope.big = !$scope.big;
+        }
         $scope.img_us = $sce.trustAsResourceUrl(data[0].img_us);
         $scope.img_br = $sce.trustAsResourceUrl(data[0].img_br);
         $scope.text_us = $sce.trustAsHtml(data[0].text_us);

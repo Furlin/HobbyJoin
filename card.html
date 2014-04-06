@@ -30,7 +30,7 @@
         <div class="line dark_blue"></div>
         
         <div ng-controller="CardCtrl">
-        <div class="text text3 name" ng-if="card[0].name_br != null">
+        <div class="text text3 name" ng-if="card[0].name_br != null" >
             {{card[0].name_br}}<br />
             ({{card[0].name_us}})
         </div>
@@ -39,9 +39,11 @@
         </div>
 
         <div>
-            <img ng-src="{{img_br}}" id="img" ng-if="lang == 'br'" />
-            <img ng-src="{{img_us}}" id="img" ng-if="lang == 'us'" />
-            
+            <div id="img" ng-class="{'big':big}">
+                <img ng-src="{{img_br}}" ng-if="lang == 'br'" ng-class="{'big':big}" ng-click="bebig()" />
+                <img ng-src="{{img_us}}" ng-if="lang == 'us'" ng-class="{'big':big}" ng-click="bebig()" />
+            </div>
+                        
             <select disabled id="set" class="text text4" ng-if="card[0].sets.length == 1">
                 <option ng-repeat="set in card[0].sets">{{set.set}}</option>
             </select>
@@ -76,18 +78,19 @@
             
             <img src="imgs/alert.png" id="lang" ng-if="text_br == null && lang == 'us'" />
             
-            <div id="text" class="text text4" ng-bind-html="text_br" ng-if="text_br != null && lang == 'br'"></div>
-            <div id="text" class="text text4" ng-bind-html="text_us" ng-if="text_us != null && lang == 'us'"></div>
+            <div id="text" class="text text4" ng-bind-html="text_br" ng-if="text_br != null && lang == 'br' && !big"></div>
+            <div id="text" class="text text4" ng-bind-html="text_us" ng-if="text_us != null && lang == 'us' && !big"></div>
             
-            <div class="info text text3" ng-if="card[0].power != null">
+            <div class="info text text3" ng-if="card[0].power != null && !big">
                 Poder: {{card[0].power}}
             </div>
-            <div class="info text text3" ng-if="card[0].resist != null">
+            <div class="info text text3" ng-if="card[0].resist != null && !big">
                 Resistência: {{card[0].resist}}
             </div>
-            <div class="info text text3" ng-if="card[0].loyalty != null">
+            <div class="info text text3" ng-if="card[0].loyalty != null && !big">
                 Lealdade: {{card[0].loyalty}}
             </div>
+
         </div>
         </div>
     </body>

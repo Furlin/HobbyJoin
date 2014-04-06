@@ -48,8 +48,26 @@
 
 #img {
     float: right;
-    margin: 10px 5px 0 0;
+    margin: 10px 1.5% 0 0;
     width: 40%;
+    position: relative;
+}
+
+#img img {
+    width: 100%;
+    max-width: 350px;
+    transition-duration: 0.5s;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#img img.big {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 247%;
+    max-width: 1000px;
 }
 
 #rarity {
