@@ -10,7 +10,7 @@ angular.module('card', ['ngTouch'])
 }])
 .controller('CardCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
     $scope.card = [{'name_us':'Carregando informações da carta...'}];
-    $http.get('http://furlin.orga/hobby/card_json.php'+$window.location.search)
+    $http.get('http://furlin.org/hobby/card_json.php'+$window.location.search)
     .success(function (data, status, headers, config) {
         $scope.card = data;
         console.log(data);
