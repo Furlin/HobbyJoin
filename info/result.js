@@ -5,7 +5,7 @@ angular.module('card', ['ngTouch'])
     };
 }])
 .controller('ResultCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
-    $http.get('http://localhost/adv.php'+$window.location.search)
+    $http.get('http://furlin.org/hobby/adv.php'+$window.location.search)
     .success(function (data, status, headers, config) {
         $scope.cards = data;
         $scope.goTo = function (link) {

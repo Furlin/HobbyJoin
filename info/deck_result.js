@@ -5,7 +5,7 @@ angular.module('card', ['ngTouch'])
     };
 }])
 .controller('DeckResultCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
-    $http.get('http://localhost/deck_result.php'+$window.location.search)
+    $http.get('http://furlin.org/hobby/deck_result.php'+$window.location.search)
     .success(function (data, status, headers, config) {
         $scope.decks = data;
         $scope.goTo = function (link) {
