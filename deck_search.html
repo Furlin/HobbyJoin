@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="deck_search">
+
+    <head>
+
+        <title>HobbyJoin</title>
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-touch.min.js"></script>
+        <script src="scripts/ui-bootstrap.min.js"></script>
+        
+        <link href="styles/base.css" rel="stylesheet" type="text/css" />
+        <link href="styles/font.css" rel="stylesheet" type="text/css" />
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="utf-8">
+        
+        <script src="info/deck_search.js"></script>
+        <script src="scripts/angular-animate.min.js"></script>
+
+        <link href="styles/deck_search.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+
+    <body>
+        
+        <div id="header" class="light_blue" ng-controller="HomeCtrl">
+            <img src="imgs/logo.png" id="logo" ng-click="goHome()">
+            <img src="imgs/menu.png" id="menu">
+        </div>
+        <div class="line dark_blue"></div>
+                    
+        <form action="deck_result.html" method="get">
+
+            <div class="div_input">
+                <input type="text" placeholder="Buscar por carta" autocomplete="off" name="card" class="text text2" />
+            </div>
+            
+            <div class="div_input">
+                <input type="text" placeholder="Nome do deck" autocomplete="off" name="deck" class="text text2" />
+            </div>
+            
+            <div class="div_input">
+                <input type="text" placeholder="Jogador" autocomplete="off" name="player" class="text text2" />
+            </div>
+            
+            <div class="div_input">
+                <input type="text" placeholder="Torneio" autocomplete="off" name="tour" class="text text2" />
+            </div>
+            
+            <input type="hidden" name="format" />
+
+            <div class="div_input">
+                <input type="submit" autocomplete="off" name="send" class="text text2" value="Buscar" />
+            </div>
+            
+        </form>
+
+    </body>
+
+</html>

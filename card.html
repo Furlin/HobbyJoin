@@ -39,58 +39,97 @@
         </div>
 
         <div>
-            <div id="img" ng-class="{'big':big}">
-                <img ng-src="{{img_br}}" ng-if="lang == 'br'" ng-class="{'big':big}" ng-click="bebig()" />
-                <img ng-src="{{img_us}}" ng-if="lang == 'us'" ng-class="{'big':big}" ng-click="bebig()" />
-            </div>
+            <table id="top_table">
+                <tr>
+                    <td id="top_table_left">
+                        <select disabled id="set" class="text text4" ng-if="card[0].sets.length == 1">
+                            <option ng-repeat="set in card[0].sets" value="{{set.id}}" ng-if="lang == 'br'">{{set.set_br}}</option>
+                            <option ng-repeat="set in card[0].sets" value="{{set.id}}" ng-if="lang == 'us'">{{set.set_us}}</option>
+                        </select>
+
+                        <select id="set" ng-model="$parent.selection" ng-init="$parent.selection = card[0].sets[0]" class="text text4 enabled" ng-if="card[0].sets.length > 1" ng-options="set.set_br for set in card[0].sets" ng-show="lang == 'br'">
+                        </select>
+
+                        <select id="set" ng-model="$parent.selection" ng-init="$parent.selection = card[0].sets[0]" class="text text4 enabled" ng-if="card[0].sets.length > 1" ng-options="set.set_us for set in card[0].sets" ng-show="lang == 'us'">
+                        </select>
                         
-            <select disabled id="set" class="text text4" ng-if="card[0].sets.length == 1">
-                <option ng-repeat="set in card[0].sets">{{set.set}}</option>
-            </select>
-            
-            <select id="set" class="text text4 enabled" ng-if="card[0].sets.length > 1">
-                <option ng-repeat="set in card[0].sets">{{set.set}}</option>
-            </select>
-            
-            <table id="price" class="text text4">
-                <tr ng-class="{'avrg':$last, 'best':$first}" ng-repeat="price in card[0].prices">
-                    <td>{{price.store}}</td>
-                    <td>{{price.price}}</td>
+                        <table id="price" class="text text4" ng-repeat="set in card[0].sets" ng-if="set.id == $parent.show">
+                            <tr class="avrg" ng-if="set.avrg != null">
+                                <td class="border">Preço Médio</td>
+                                <td class="border">{{set.avrg}}</td>
+                            </tr>
+                            <tr ng-class="{'best':$first}" ng-repeat="price in set.prices" ng-click="goTo('{{price.link+price.link2}}')">
+                                <td class="border">{{price.store}}</td>
+                                <td class="border">{{price.price}}</td>
+                            </tr>
+                            <tr ng-if="set.prices == null">
+                                <td class="border"><br /></td>
+                            </tr>
+                            <tr class="error" ng-if="set.prices == null">
+                                <td>Carta não disponível</td>
+                            </tr>
+                            <tr class="error" ng-if="set.prices == null">
+                                <td class="border">nas lojas cadastradas</td>
+                            </tr>
+                            <tr ng-if="set.prices == null">
+                                <td class="border"><br /></td>
+                            </tr>
+                        </table>
+                        <table id="price" class="text text4">
+                            <tr>
+                                <td class="border"><img src="imgs/add_collection.png" class="add" />Adicionar à coleção</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="top_table_right">
+                        <div id="img" ng-class="{'big':big}" ng-repeat="set in card[0].sets" ng-if="set.id == $parent.show">
+                            <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{set.img.replace('Æ', 'ae')}}.jpg" ng-if="lang == 'br'" ng-class="{'big':big}" ng-click="bebig()" />
+                            <img src="http://furlin.org/__hobbyon/imgs/cards/us/{{set.img.replace('Æ', 'ae')}}.jpg" ng-if="lang == 'us'" ng-class="{'big':big}" ng-click="bebig()" />
+                        </div>
+                    </td>
                 </tr>
             </table>
-            <br />
             <div class="text text3">
-                <div id="rarity" class="inline">{{card[0].rarity}}</div>
+                <div id="rarity" class="inline" ng-repeat="set in card[0].sets" ng-if="set.id == $parent.show && lang == 'br'">{{set.rarity_br}}</div>
+                <div id="rarity" class="inline" ng-repeat="set in card[0].sets" ng-if="set.id == $parent.show && lang == 'us'">{{set.rarity_us}}</div>
                 <div id="cost">
-                    <img ng-repeat="cost in card[0].costs" src="imgs/symbols/{{cost.img}}.png">
-                    ({{card[0].converted}})
+                    <img ng-repeat="cost in card[0].cost" src="imgs/symbols/{{cost.img}}.png">
+                    <span ng-if="card[0].conv != null">({{card[0].conv}})</span>
                 </div>
             </div>
             <br />
             <br />
-            
-            <div id="type" class="text text3">
-                {{card[0].type}}
-            </div>
-            
-            <img src="imgs/us.png" id="lang" ng-if="text_us != null && lang == 'br'" ng-click="$parent.lang = 'us'" />
-            <img src="imgs/br.png" id="lang" ng-if="text_br != null && lang == 'us'" ng-click="$parent.lang = 'br'" />
-            
-            <img src="imgs/alert.png" id="lang" ng-if="text_br == null && lang == 'us'" />
-            
-            <div id="text" class="text text4" ng-bind-html="text_br" ng-if="text_br != null && lang == 'br' && !big"></div>
-            <div id="text" class="text text4" ng-bind-html="text_us" ng-if="text_us != null && lang == 'us' && !big"></div>
-            
-            <div class="info text text3" ng-if="card[0].power != null && !big">
-                Poder: {{card[0].power}}
-            </div>
-            <div class="info text text3" ng-if="card[0].resist != null && !big">
-                Resistência: {{card[0].resist}}
-            </div>
-            <div class="info text text3" ng-if="card[0].loyalty != null && !big">
-                Lealdade: {{card[0].loyalty}}
+
+            <div id="type" class="text text3" ng-if="lang == 'br'">
+                {{card[0].type_br}}
             </div>
 
+            <div id="type" class="text text3" ng-if="lang == 'us'">
+                {{card[0].type_us}}
+            </div>
+
+            <div id="flag">
+                <img src="imgs/alert.png" id="alert" ng-if="text_br == null && text_us != null" />
+
+                <img src="imgs/us.png" id="lang" ng-if="lang == 'br'" ng-click="$parent.lang = 'us'" />
+                <img src="imgs/br.png" id="lang" ng-if="lang == 'us'" ng-click="$parent.lang = 'br'" />
+            </div>
+            <div id="text" class="text text4" ng-bind-html="text_br" ng-if="text_br != null && lang == 'br' && !big"></div>
+            <div id="text" class="text text4" ng-bind-html="text_us" ng-if="(text_us != null && lang == 'us' && !big) || (text_us != null && text_br == null && !big)"></div>
+
+            <div class="info text text3" ng-if="card[0].power != null && !big && lang == 'br'">
+                Poder/Resistência: {{card[0].power}}/{{card[0].resist}}
+            </div>
+            <div class="info text text3" ng-if="card[0].power != null && !big && lang == 'us'">
+                Power/Toughness: {{card[0].power}}/{{card[0].resist}}
+            </div>
+
+            <div class="info text text3" ng-if="card[0].loyalty != null && !big && lang == 'br'">
+                Lealdade: {{card[0].loyalty}}
+            </div>
+            <div class="info text text3" ng-if="card[0].loyalty != null && !big && lang == 'us'">
+                Loyalty: {{card[0].loyalty}}
+            </div>
         </div>
         </div>
     </body>

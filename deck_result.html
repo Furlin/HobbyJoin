@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="card">
+
+    <head>
+
+        <title>HobbyJoin</title>
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-touch.min.js"></script>
+        <script src="scripts/ui-bootstrap.min.js"></script>
+        
+        <link href="styles/base.css" rel="stylesheet" type="text/css" />
+        <link href="styles/font.css" rel="stylesheet" type="text/css" />
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="utf-8">
+        
+        <script src="info/deck_result.js"></script>
+
+        <link href="styles/deck_result.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        
+        <div id="header" class="light_blue" ng-controller="HomeCtrl">
+            <img src="imgs/logo.png" id="logo" ng-click="goHome()">
+            <img src="imgs/menu.png" id="menu">
+        </div>
+        <div class="line dark_blue"></div>
+        
+        <div id="result" ng-controller="DeckResultCtrl">
+            <div ng-repeat="deck in decks" class="deck text text4" ng-click="goTo('deck.html?id={{deck.id}}')">
+                <div class="name">
+                    {{deck.name}}
+                </div>
+                <div class="tour">
+                    {{deck.tour}}
+                </div>
+                <div class="info">
+                    {{deck.info}}
+                </div>
+                <div class="player">
+                    {{deck.player}}
+                </div>
+                <div class="text text4 next" ng-show="$index == 10" ng-click="goNext()">
+                    Próximos resultados...
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

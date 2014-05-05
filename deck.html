@@ -1,0 +1,290 @@
+<!doctype html>
+<html ng-app="card">
+
+    <head>
+
+        <title>HobbyJoin</title>
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-touch.min.js"></script>
+        <script src="scripts/ui-bootstrap.min.js"></script>
+        
+        <link href="styles/base.css" rel="stylesheet" type="text/css" />
+        <link href="styles/font.css" rel="stylesheet" type="text/css" />
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="utf-8">
+        
+        <script src="info/deck.js"></script>
+
+        <link href="styles/deck.css?v=1.3" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        
+        <div id="header" class="light_blue" ng-controller="HomeCtrl">
+            <img src="imgs/logo.png" id="logo" ng-click="goHome()">
+            <img src="imgs/menu.png" id="menu">
+        </div>
+        
+        <div ng-controller="DeckCtrl" class="text text4">
+            
+            <div class="line dark_blue"></div>
+            
+            <div class="info">
+                <div class="bold">{{deck.deck}}</div>
+                <div ng-if="deck.tour != null">{{deck.tour}} ({{deck.format}}) {{deck.tdate}}</div>
+                <div ng-if="deck.player != null">{{deck.player}} ({{deck.info}})</div>
+            </div>
+
+            <div class="line light_blue"></div>
+            
+            <div id="deck">
+                
+                <div class="bold">MAIN DECK ({{deck.cards}} CARTAS)</div>
+            
+                <div class="block" ng-if="deck.land != 0">
+                    <div class="cards" ng-repeat="card in deck.lands">
+                        <div ng-click="card.show = !card.show">
+                            {{card.num}} {{card.name_br}}
+                        </div>
+                        <div ng-if="card.show == true" class="card_info">
+                            <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img}}.jpg" class="card_img" />
+                            <table class="table" ng-if="card.min != null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="mid">
+                                    <td class="left">Preço Médio</td>
+                                    <td class="right">{{card.avrg}}</td>
+                                </tr>
+                                <tr class="low">
+                                    <td class="left">{{card.store}}</td>
+                                    <td class="right">{{card.min}}</td>
+                                </tr>
+                            </table>
+                            <table class="table" ng-if="card.min == null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>Carta não disponível</td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>nas lojas cadastradas</td>
+                                </tr>
+                            </table>
+                            <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
+                        </div>
+                    </div>
+                    <div class="total bold">{{deck.land}} Terrenos</div>
+                </div>
+                
+                <div class="block" ng-if="deck.creature != 0">
+                    <div class="cards" ng-repeat="card in deck.creatures">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br != null">
+                            {{card.num}} {{card.name_br}}
+                        </div>
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br == null">
+                            {{card.num}} {{card.name_us}}
+                        </div>
+                        <div ng-if="card.show == true" class="card_info">
+                            <div class="card_img">
+                                <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img.replace('Æ', 'ae')}}.jpg" />
+                            </div>
+                            <table class="table" ng-if="card.min != null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="mid">
+                                    <td class="left">Preço Médio</td>
+                                    <td class="right">{{card.avrg}}</td>
+                                </tr>
+                                <tr class="low">
+                                    <td class="left">{{card.store}}</td>
+                                    <td class="right">{{card.min}}</td>
+                                </tr>
+                            </table>
+                            <table class="table" ng-if="card.min == null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>Carta não disponível</td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>nas lojas cadastradas</td>
+                                </tr>
+                            </table>
+                            <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
+                        </div>
+                    </div>
+                    <div class="total bold">{{deck.creature}} Criaturas</div>
+                </div>
+            
+                <div class="block" ng-if="deck.plane != 0">
+                    <div class="cards" ng-repeat="card in deck.planes">
+                        <div ng-click="card.show = !card.show">
+                            {{card.num}} {{card.name_br}}
+                        </div>
+                        <div ng-if="card.show == true" class="card_info">
+                            <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img}}.jpg" class="card_img" />
+                            <table class="table" ng-if="card.min != null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="mid">
+                                    <td class="left">Preço Médio</td>
+                                    <td class="right">{{card.avrg}}</td>
+                                </tr>
+                                <tr class="low">
+                                    <td class="left">{{card.store}}</td>
+                                    <td class="right">{{card.min}}</td>
+                                </tr>
+                            </table>
+                            <table class="table" ng-if="card.min == null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>Carta não disponível</td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>nas lojas cadastradas</td>
+                                </tr>
+                            </table>
+                            <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
+                        </div>
+                    </div>
+                    <div class="total bold">{{deck.plane}} Planinaltas</div>
+                </div>
+            
+                <div class="block" ng-if="deck.other != 0">
+                    <div class="cards" ng-repeat="card in deck.others">
+                        <div ng-click="card.show = !card.show" ng-show="card.name_br != null">
+                            {{card.num}} {{card.name_br}}
+                        </div>
+                        <div ng-click="card.show = !card.show" ng-show="card.name_br == null">
+                            {{card.num}} {{card.name_us}}
+                        </div>
+                        <div ng-if="card.show == true" class="card_info">
+                            <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img}}.jpg" class="card_img" />
+                            <table class="table" ng-if="card.min != null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="mid">
+                                    <td class="left">Preço Médio</td>
+                                    <td class="right">{{card.avrg}}</td>
+                                </tr>
+                                <tr class="low">
+                                    <td class="left">{{card.store}}</td>
+                                    <td class="right">{{card.min}}</td>
+                                </tr>
+                            </table>
+                            <table class="table" ng-if="card.min == null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>Carta não disponível</td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>nas lojas cadastradas</td>
+                                </tr>
+                            </table>
+                            <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
+                        </div>
+                    </div>
+                    <div class="total bold">{{deck.other}} Outras Mágicas</div>
+                </div>
+                
+                <div class="block side" ng-if="deck.side != 0">
+                    <div class="bold sidet">Sideboard</div>
+                    <div class="cards" ng-repeat="card in deck.sides">
+                        <div ng-click="card.show = !card.show" ng-show="card.name_br != null">
+                            {{card.num}} {{card.name_br}}
+                        </div>
+                        <div ng-click="card.show = !card.show" ng-show="card.name_br == null">
+                            {{card.num}} {{card.name_us}}
+                        </div>
+                        <div ng-if="card.show == true" class="card_info">
+                            <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img}}.jpg" class="card_img" />
+                            <table class="table" ng-if="card.min != null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="mid">
+                                    <td class="left">Preço Médio</td>
+                                    <td class="right">{{card.avrg}}</td>
+                                </tr>
+                                <tr class="low">
+                                    <td class="left">{{card.store}}</td>
+                                    <td class="right">{{card.min}}</td>
+                                </tr>
+                            </table>
+                            <table class="table" ng-if="card.min == null">
+                                <tr>
+                                    <td><div class="spacer"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>Carta não disponível</td>
+                                </tr>
+                                <tr class="text4 error">
+                                    <td>nas lojas cadastradas</td>
+                                </tr>
+                            </table>
+                            <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
+                        </div>
+                    </div>
+                    <div class="total bold">{{deck.side}} Cartas no sideboard</div>
+                </div>
+                
+            </div>
+                
+        </div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app="card">
+
+    <head>
+
+        <title>HobbyJoin</title>
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-touch.min.js"></script>
+        <script src="scripts/ui-bootstrap.min.js"></script>
+        
+        <link href="styles/base.css" rel="stylesheet" type="text/css" />
+        <link href="styles/font.css" rel="stylesheet" type="text/css" />
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="utf-8">
+        
+        <script src="info/result.js"></script>
+
+        <link href="styles/result.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        
+        <div id="header" class="light_blue" ng-controller="HomeCtrl">
+            <img src="imgs/logo.png" id="logo" ng-click="goHome()">
+            <img src="imgs/menu.png" id="menu">
+        </div>
+        <div class="line dark_blue"></div>
+        
+        <div id="result" ng-controller="ResultCtrl">
+            <div ng-repeat="card in cards">
+                <div class="row text text4" ng-show="$index != 10" ng-click="goTo('card.html?id={{card.id}}')">
+                    <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img.replace('Æ', 'ae')}}.jpg" class="img_mini" />
+                    <div class="name" ng-if="card.name_br != null">{{card.name_br}}</div>
+                    <div class="name" ng-if="card.name_br == null">{{card.name_us}}</div>
+                    <div class="set" ng-if="card.set_br != null">{{card.set_br}}</div>
+                    <div class="set" ng-if="card.set_br == null">{{card.set_us}}</div>
+                    <table class="table" ng-if="card.min != null">
+                        <tr class="mid">
+                            <td class="left">Preço Médio</td>
+                            <td class="right">{{card.avrg}}</td>
+                        </tr>
+                        <tr class="low">
+                            <td class="left">{{card.store}}</td>
+                            <td class="right">{{card.min}}</td>
+                        </tr>
+                    </table>
+                    <table class="table" ng-if="card.min == null">
+                        <tr class="text4 error">
+                            <td>Carta não disponível</td>
+                        </tr>
+                        <tr class="text4 error">
+                            <td>nas lojas cadastradas</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text text4 next" ng-show="$index == 10" ng-click="goNext()">
+                    Próximos resultados...
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

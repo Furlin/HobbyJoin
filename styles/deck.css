@@ -1,0 +1,136 @@
+.bold {
+    font-weight: bold;
+}
+
+.block {
+    margin: 10px 0;
+}
+
+.info, #deck {
+    padding: 10px;
+}
+
+.card_info {
+    height: 110px;
+}
+
+.card_img {
+    height: 100px;
+    width: 72px;
+    padding: 5px 5px 5px 0;
+    float: left;
+    background: url(../imgs/placeholder.png);
+}
+
+.card_img img {
+    height: 100px;
+}
+
+.spacer {
+    height: 5px;
+}
+
+.ir {
+    padding: 3px;
+}
+
+.error {
+    background-color: #fc9;
+}
+
+.low {
+    background-color: #afa;
+}
+
+.mid {
+    background-color: #ff9;
+}
+
+.table {
+    border: 0;
+    border-collapse: collapse;
+}
+
+.left {
+    padding: 3px 3px 3px 0;
+}
+
+.right {
+    padding: 3px;
+}
+
+.total {
+    border-top: 1px solid #999;
+}
+
+.close {
+    float: right;
+    height: 12px;
+    padding: 3px;
+}
+
+.side {
+    color: #111;
+}
+
+.sidet {
+    color: #000;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+@media (min-width:640px) {
+    .card_img {
+        height: 200px;
+        width: 143px;
+        padding: 10px 10px 10px 0;
+    }
+    .card_img img {
+        height: 200px;
+    }
+    .spacer {
+        height: 10px;
+    }
+    .card_info {
+        height: 220px;
+    }
+    .close {
+        height: 24px;
+        padding: 6px;
+    }
+    .block {
+        margin: 20px 0;
+    }
+    .sidet {
+        padding-bottom: 10px;
+        margin-top: 20px;
+    }
+}
+    
+@media (min-width:480px) and (max-width:639px) {
+    .card_img {
+        height: 150px;
+        width: 108px;
+        padding: 7px 7px 7px 0;
+    }
+    .card_img img {
+        height: 150px;
+    }
+    .spacer {
+        height: 7px;
+    }
+    .card_info {
+        height: 164px;
+    }
+    .close {
+        height: 18px;
+        padding: 5px;
+    }
+    .block {
+        margin: 15px 0;
+    }
+    .sidet {
+        padding-bottom: 7px;
+        margin-top: 15x;
+    }
+}

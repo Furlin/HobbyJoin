@@ -6,7 +6,7 @@
 
 #set {
     margin: 10px 0 0 5px;
-    width: 55%;
+    width: 95%;
     border: 1px solid #000;
     border-radius: 4px;
     padding: 3px 0;
@@ -25,8 +25,19 @@
     margin: 5px;
 }
 
+#flag {
+    width: 40px;
+    float: right;
+}
+
+#alert {
+    float: right;
+    width: 26px;
+    margin: 7px;
+}
+
 #price {
-    width: 55%;
+    width: 95%;
     margin: 5px 0 0 5px;
     padding: 0;
     border-collapse:collapse;
@@ -34,6 +45,9 @@
 
 #price td {
     padding: 5px 0;
+}
+
+.border {
     border-bottom: 1px solid #000;
 }
 
@@ -46,33 +60,52 @@
     background-color: #ff9;
 }
 
-#img {
-    float: right;
-    margin: 10px 1.5% 0 0;
-    width: 40%;
+.error {
+    background-color: #fc9;
+}
+
+#top_table {
+    width: 100%;
+    padding: 0;
+    border-collapse:collapse;
     position: relative;
+}
+
+#top_table_left {
+    width: 60%;
+}
+
+#top_table_right {
+    width: 40%;
+}
+
+#img {
+    margin: 10px 1.5% 0 0;
+    width: 100%;
 }
 
 #img img {
     width: 100%;
-    max-width: 350px;
-    transition-duration: 0.5s;
-    position: absolute;
-    right: 0;
-    top: 0;
+    max-width: 100%;
 }
 
 #img img.big {
     position: absolute;
     top: 0;
     right: 0;
-    width: 247%;
-    max-width: 1000px;
+    width: 100%;
 }
 
 #rarity {
     margin-left: 7px;
     float: left;
+}
+
+.add {
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 20px;
+    margin-top: -2px;
 }
 
 .inline {
@@ -108,10 +141,23 @@
     margin: 0 3px;
 }
 
+.text_img {
+    height: 16px;
+    margin: 0 2px;
+    vertical-align: bottom;
+}
+
 @media (min-width:640px) {
     #lang {
         width: 60px;
         margin: 10px;
+    }
+    #flag {
+        width: 80px;
+    }
+    #alert {
+        width: 48px;
+        margin: 16px;
     }
     #text {
         margin: 10px;
@@ -147,11 +193,27 @@
         height: 48px;
         margin: 0 5px;
     }
+    .text_img {
+        height: 32px;
+        margin: 0 4px;        
+    }
+    .add {
+        margin-right: 7px;
+        height: 32px;
+        margin-top: -5px;
+    }
 }
 @media (min-width:480px)  and (max-width:639px){
     #lang {
         width: 46px;
         margin: 7px;
+    }
+    #flag {
+        width: 60px;
+    }
+    #alert {
+        width: 36px;
+        margin: 12px;
     }
     .info {
         margin-top: 15px;
@@ -180,8 +242,17 @@
     #img {
         margin-right: 7px;
     }
-    #cost img {
+    #cost img, .text_img {
         height: 32px;
         margin: 0 4px;
+    }
+    .text_img {
+        height: 24px;
+        margin: 0 3px;        
+    }
+    .add {
+        margin-right: 7px;
+        height: 24px;
+        margin-top: -2px;
     }
 }

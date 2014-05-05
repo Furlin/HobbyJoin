@@ -1,0 +1,44 @@
+.div_input {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+.div_input input {
+    text-indent: 8px;
+    width: 94%;
+    height: 44px;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+@media (min-width:640px) {
+
+    .div_input {
+        margin-top: 2%;
+    }
+    
+    .div_input input {
+        width: 96%;
+        height: 88px;
+        border-radius: 12px;
+        text-indent: 12px;
+    }
+
+}
+
+@media (min-width:480px) and (max-width:639px) {
+
+    .div_input {
+        margin-top: 2.5%;
+    }
+    
+    .div_input input {
+        width: 95%;
+        height: 66px;
+        border-radius: 10px;
+        text-indent: 10px;
+    }
+
+}

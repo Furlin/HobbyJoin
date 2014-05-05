@@ -26,12 +26,13 @@ angular.module('adv_search', ['ngTouch'])
     
     $scope.colors = [
         {text:'Multi-coloridas', name:'multi', checked:true, size:3},
-        {text:'Mono-coloridas', name:'multi', checked:true, size:3},
-        {text:'Excluir cartas com cores não marcadas', name:'multi', checked:false, size:4},
-        {text:'Requer todas as cores na mesma carta', name:'multi', checked:false, size:4}
+        {text:'Mono-coloridas', name:'mono', checked:true, size:3},
+        {text:'Excluir cartas com cores não marcadas', name:'exclude', checked:false, size:4},
+        {text:'Requer todas as cores na mesma carta', name:'req-color', checked:false, size:4}
      ];
     
     $scope.types = [
+        {text:'Todos os tipos na mesma carta', name:'all', checked:false, size:4},
         {text:'Artefato', name:'art', checked:false, size:3},
         {text:'Criatura', name:'cre', checked:false, size:3},
         {text:'Encantamento', name:'enc', checked:false, size:3},

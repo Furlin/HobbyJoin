@@ -1,0 +1,32 @@
+.name {
+    font-weight: bold;
+}
+
+.deck {
+    padding: 6px;
+    border-bottom: 1px solid #666;
+}
+
+.deck div {
+    padding: 1px;
+}
+
+@media (min-width:640px) {
+    .deck {
+        padding: 10px;
+    }
+
+    .deck div {
+        padding: 3px;
+    }
+}
+    
+@media (min-width:480px) and (max-width:639px) {
+    .deck {
+        padding: 8px;
+    }
+
+    .deck div {
+        padding: 2px;
+    }
+}
