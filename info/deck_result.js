@@ -9,6 +9,7 @@ angular.module('card', ['ngTouch'])
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }])
 .controller('DeckResultCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
+    $scope.decks = [{"id":"1","name":'http://furlin.org/hobby/deck_result.php'+$window.location.search}]
     $http.get('http://furlin.org/hobby/deck_result.php'+$window.location.search)
     .success(function (data, status, headers, config) {
         $scope.decks = data;
