@@ -4,6 +4,10 @@ angular.module('deck_search', ['ngTouch'])
         $window.location.href = 'index.html';  
     };
 }])
+.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}])
 .controller('DeckSearchCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
     $http.get('http://furlin.org/hobby/deck_result.php'+$window.location.search)
     .success(function (data, status, headers, config) {

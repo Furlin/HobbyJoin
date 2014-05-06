@@ -3,6 +3,8 @@
     height: 100px;
     float: left;
     margin: 0 5px;
+    background: url(../imgs/loader.png) no-repeat;
+    background-size:72px 100px;
 }
 
 .next {
@@ -64,6 +66,8 @@
         width: 142px;
         height: 200px;
         margin: 0 10px;
+        background: url(../imgs/loader.png) no-repeat;
+        background-size:142px 200px;
     }
     
     .name {
@@ -99,9 +103,11 @@
     }
     
     .img_mini {
-        width: 100px;
-        height: 140px;
+        width: 108px;
+        height: 150px;
         margin: 0 8px;
+        background: url(../imgs/loader.png) no-repeat;
+        background-size:108px 150px;
     }
     
    .name {
@@ -118,7 +124,7 @@
     
     .row {
         padding: 8px 0;
-        height: 140px;
+        height: 150px;
     }
 
     .left {

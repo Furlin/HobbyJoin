@@ -15,9 +15,9 @@
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charset="utf-8">
         
-        <script src="info/card.js"></script>
+        <script src="info/card.js?v=1.1"></script>
 
-        <link href="styles/card.css" rel="stylesheet" type="text/css" />
+        <link href="styles/card.css?v=1.3" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -75,7 +75,7 @@
                                 <td class="border"><br /></td>
                             </tr>
                         </table>
-                        <table id="price" class="text text4">
+                        <table id="price" class="text text4" ng-if="show_add">
                             <tr>
                                 <td class="border"><img src="imgs/add_collection.png" class="add" />Adicionar à coleção</td>
                             </tr>
@@ -83,8 +83,10 @@
                     </td>
                     <td id="top_table_right">
                         <div id="img" ng-class="{'big':big}" ng-repeat="set in card[0].sets" ng-if="set.id == $parent.show">
-                            <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{set.img.replace('Æ', 'ae')}}.jpg" ng-if="lang == 'br'" ng-class="{'big':big}" ng-click="bebig()" />
-                            <img src="http://furlin.org/__hobbyon/imgs/cards/us/{{set.img.replace('Æ', 'ae')}}.jpg" ng-if="lang == 'us'" ng-class="{'big':big}" ng-click="bebig()" />
+                            <div>
+                                <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{set.img.replace('Æ', 'ae')}}.jpg" ng-if="lang == 'br'" ng-class="{'big':big}" ng-click="bebig()" />
+                                <img src="http://furlin.org/__hobbyon/imgs/cards/us/{{set.img.replace('Æ', 'ae')}}.jpg" ng-if="lang == 'us'" ng-class="{'big':big}" ng-click="bebig()" />
+                            </div>
                         </div>
                     </td>
                 </tr>

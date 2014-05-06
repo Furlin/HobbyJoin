@@ -4,6 +4,10 @@ angular.module('card', ['ngTouch'])
         $window.location.href = 'index.html';  
     };
 }])
+.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}])
 .controller('DeckCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
     $scope.deck = {'deck':'Carregando informações...'};
     $http.get('http://furlin.org/hobby/deck.php'+$window.location.search)

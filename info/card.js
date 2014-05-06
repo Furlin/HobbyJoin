@@ -9,8 +9,12 @@ angular.module('card', ['ngTouch'])
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }])
 .controller('CardCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
+    $scope.card_id = $window.location.search;
+    if ($scope.card_id.substr(4) > 100000) $scope.card_id = '?id='+($scope.card_id.substr(4) - 100000);
+    console.log($scope.card_id);
     $scope.card = [{'name_us':'Carregando informações da carta...'}];
-    $http.get('http://furlin.org/hobby/card_json.php'+$window.location.search)
+    $scope.show_add = true;
+    $http.get('http://furlin.org/hobby/card_json.php'+$scope.card_id)
     .success(function (data, status, headers, config) {
         $scope.card = data;
         console.log(data);

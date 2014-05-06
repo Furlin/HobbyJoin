@@ -89,6 +89,20 @@
     max-width: 100%;
 }
 
+#img div {
+    min-width: 120px;
+    min-height: 168px;
+    background: url(../imgs/loader.png) no-repeat;
+    background-size: contain;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+}
+
 #img img.big {
     position: absolute;
     top: 0;
@@ -148,6 +162,10 @@
 }
 
 @media (min-width:640px) {
+    #img div {
+        min-width: 247px;
+        min-height: 345px;
+    }
     #lang {
         width: 60px;
         margin: 10px;
@@ -204,6 +222,10 @@
     }
 }
 @media (min-width:480px)  and (max-width:639px){
+    #img div {
+        min-width: 183px;
+        min-height: 256px;
+    }
     #lang {
         width: 46px;
         margin: 7px;
