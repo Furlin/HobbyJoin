@@ -14,6 +14,10 @@
     height: 110px;
 }
 
+.card_name {
+    padding: 5px;
+}
+
 .card_img {
     height: 100px;
     width: 72px;

@@ -17,7 +17,7 @@
         
         <script src="info/deck.js"></script>
 
-        <link href="styles/deck.css?v=1.5" rel="stylesheet" type="text/css" />
+        <link href="styles/deck.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -46,8 +46,11 @@
             
                 <div class="block" ng-if="deck.land != 0">
                     <div class="cards" ng-repeat="card in deck.lands">
-                        <div ng-click="card.show = !card.show">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
+                        </div>
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br == null" class="card_name">
+                            {{card.num}} {{card.name_us}}
                         </div>
                         <div ng-if="card.show == true" class="card_info">
                             <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img}}.jpg" class="card_img" />
@@ -91,10 +94,10 @@
                 
                 <div class="block" ng-if="deck.creature != 0">
                     <div class="cards" ng-repeat="card in deck.creatures">
-                        <div ng-click="card.show = !card.show" ng-if="card.name_br != null">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
                         </div>
-                        <div ng-click="card.show = !card.show" ng-if="card.name_br == null">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br == null" class="card_name">
                             {{card.num}} {{card.name_us}}
                         </div>
                         <div ng-if="card.show == true" class="card_info">
@@ -141,8 +144,11 @@
             
                 <div class="block" ng-if="deck.plane != 0">
                     <div class="cards" ng-repeat="card in deck.planes">
-                        <div ng-click="card.show = !card.show">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
+                        </div>
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br == null" class="card_name">
+                            {{card.num}} {{card.name_us}}
                         </div>
                         <div ng-if="card.show == true" class="card_info">
                             <img src="http://furlin.org/__hobbyon/imgs/cards/br/{{card.img}}.jpg" class="card_img" />
@@ -186,10 +192,10 @@
             
                 <div class="block" ng-if="deck.other != 0">
                     <div class="cards" ng-repeat="card in deck.others">
-                        <div ng-click="card.show = !card.show" ng-show="card.name_br != null">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
                         </div>
-                        <div ng-click="card.show = !card.show" ng-show="card.name_br == null">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br == null" class="card_name">
                             {{card.num}} {{card.name_us}}
                         </div>
                         <div ng-if="card.show == true" class="card_info">
@@ -235,10 +241,10 @@
                 <div class="block side" ng-if="deck.side != 0">
                     <div class="bold sidet">Sideboard</div>
                     <div class="cards" ng-repeat="card in deck.sides">
-                        <div ng-click="card.show = !card.show" ng-show="card.name_br != null">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
                         </div>
-                        <div ng-click="card.show = !card.show" ng-show="card.name_br == null">
+                        <div ng-click="card.show = !card.show" ng-if="card.name_br == null" class="card_name">
                             {{card.num}} {{card.name_us}}
                         </div>
                         <div ng-if="card.show == true" class="card_info">
