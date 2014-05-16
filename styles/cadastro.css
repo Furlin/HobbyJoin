@@ -1,0 +1,145 @@
+.div_input {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+.error {
+    margin-top 3%;
+}
+
+.msg {
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+:focus + .error {
+    display: none;
+}
+
+.login {
+    background-color: #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    padding: 3px 0;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+.submit {
+    background-color: #03c;
+    color: #fff;
+}
+
+.input_field {
+    text-indent: 8px;
+    width: 94%;
+    height: 44px;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+.cep1 {
+    text-indent: 8px;
+    width: 42%;
+    margin: 0 5px;
+    height: 44px;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+.cep2 {
+    text-indent: 8px;
+    width: 26%;
+    margin: 0 5px;
+    height: 44px;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+#logo_large {
+    text-align: center;
+    height: 80px;
+}
+
+#logo_large img {
+    margin-top: 16px;
+    height: 48px;
+}
+
+@media (min-width:640px) {
+    
+    #logo_large {
+        height: 160px;
+    }
+    
+    #logo_large img {
+        margin-top: 33px;
+        height: 94px;
+    }
+
+    .div_input {
+        margin-top: 2%;
+    }
+    
+    .input_field {
+        width: 96%;
+        height: 88px;
+        border-radius: 12px;
+        text-indent: 12px;
+    }
+    
+    .cep1, .cep2 {
+        text-indent: 12px;
+        margin: 0 9px;
+        height: 88px;
+        border-radius: 12px;
+    }
+    
+    .login {
+        width: 96%;
+        padding: 5px 0;
+        border-radius: 12px;
+    }
+
+}
+
+@media (min-width:480px) and (max-width:639px) {
+
+    #logo_large {
+        height: 120px;
+    }
+    
+    #logo_large img {
+        margin-top: 25px;
+        height: 70px;
+    }
+    
+    .div_input {
+        margin-top: 2.5%;
+    }
+    
+    .input_field {
+        width: 95%;
+        height: 66px;
+        border-radius: 10px;
+        text-indent: 10px;
+    }
+    
+    .cep1, .cep2 {
+        text-indent: 10px;
+        margin: 0 7px;
+        height: 66px;
+        border-radius: 10px;
+    }
+    
+    .login {
+        width: 95%;
+        padding: 4px 0;
+        border-radius: 10px;
+    }
+
+}

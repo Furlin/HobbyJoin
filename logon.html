@@ -1,0 +1,83 @@
+<!doctype html>
+<html ng-app="login">
+
+    <head>
+
+        <title>HobbyJoin</title>
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-touch.min.js"></script>
+        <script src="scripts/ui-bootstrap.min.js"></script>
+        
+        <link href="styles/base.css" rel="stylesheet" type="text/css" />
+        <link href="styles/font.css" rel="stylesheet" type="text/css" />
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="utf-8">
+        
+        <script src="info/logon.js"></script>
+
+        <link href="styles/logon.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        
+        <div class="line light_blue"></div>
+        <div id="logo_large">
+            <img src="imgs/logo_large.png" />
+        </div>
+        <div class="line dark_blue"></div>
+        
+        <div id="form" ng-controller="LogonCtrl">
+                            
+            <div class="div_input text text3 msg" ng-show="loading == true">
+                Conectando ao servidor.
+            </div>
+            
+            <div class="div_input text text3 msg" ng-show="rec == true">
+                Sua senha foi enviada para o e-mail cadastrado.
+            </div>
+            
+            <div class="div_input" ng-show="rec == true">
+                <div class="text text2 login" ng-click="goto('login')">Fazer Login</div>
+            </div>
+            
+            <div class="div_input text text3 msg" ng-show="wrong == true">
+                E-mail e/ou senha informados incorretamente.
+            </div>
+            
+            <div class="div_input" ng-show="wrong == true">
+                <div class="text text2 login" ng-click="goto('login')">Fazer Login</div>
+            </div>
+            
+            <div class="div_input text text3 msg" ng-show="cad == true">
+                O e-mail informado não está cadastrado em nosso sistema.
+            </div>
+            
+            <div class="div_input" ng-show="cad == true">
+                <div class="text text2 login" ng-click="goto('cadastro')">Fazer Cadastro</div>
+            </div>
+            
+            <div class="div_input text text3 msg" ng-show="err == true">
+                Não foi possível conectar ao servidor, verifique sua conexão com a internet.
+            </div>
+            
+            <div class="div_input" ng-show="err == true">
+                <div class="text text3 login" ng-click="refr()">Tentar Novamente</div>
+            </div>
+            
+            <div class="div_input text text3 msg" ng-show="mysql == true">
+                Ocorreu um erro no nosso servidor, por favor tente refazer o seu login e verifique que todas as informações fornecidas são válidas.<br />
+                Se o problema persistir por fazer entre em contato através do e-mail: contato@hobbyon.com.br
+            </div>
+            
+            <div class="div_input" ng-show="mysql == true">
+                <div class="text text3 login" ng-click="goto('login')">Tentar Novamente</div>
+            </div>
+            
+        </div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html ng-app="login">
+
+    <head>
+
+        <title>HobbyJoin</title>
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-touch.min.js"></script>
+        <script src="scripts/ui-bootstrap.min.js"></script>
+        
+        <link href="styles/base.css" rel="stylesheet" type="text/css" />
+        <link href="styles/font.css" rel="stylesheet" type="text/css" />
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="utf-8">
+        
+        <script src="info/login.js"></script>
+
+        <link href="styles/login.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        
+        <div class="line light_blue"></div>
+        <div id="logo_large">
+            <img src="imgs/logo_large.png" />
+        </div>
+        <div class="line dark_blue"></div>
+        
+        <div id="form" ng-controller="LoginCtrl">
+            
+            <form action="logon.html" method="get">
+
+                <div class="div_input">
+                    <input type="email" placeholder="E-mail" autocomplete="off" name="email" class="text text2 input_field" />
+                </div>
+
+                <div class="div_input" ng-show="rec == false">
+                    <input type="password" placeholder="Senha" autocomplete="off" name="senha1" class="text text2 input_field" />
+                </div>
+                
+                <div class="div_input" ng-show="rec == false">
+                    <input type="submit" autocomplete="off" name="send" class="text text2 input_field submit" value="Fazer Login" />
+                </div>
+                
+                <div class="div_input text text4 msg" ng-show="rec == true">
+                    Informe o e-mail usado no cadastro para receber sua senha.
+                </div>
+                
+                <input type="hidden" name="rec" ng-value="rec" />
+                
+                <div class="div_input" ng-show="rec == true">
+                    <input type="submit" autocomplete="off" name="send" class="text text2 input_field submit" value="Enviar senha" />
+                </div>
+                            
+            </form>
+            
+            <div class="div_input" ng-click="rec = true" ng-show="rec == false">
+                <div class="text text2 login">Recuperar senha</div>
+            </div>
+
+            <div class="div_input" ng-click="rec = false" ng-show="rec == true">
+                <div class="text text2 login">Voltar ao Login</div>
+            </div>
+            
+            <div class="div_input" ng-click="goto('index')">
+                <div class="text text2 login">Fazer Cadastro</div>
+            </div>
+            
+        </div>
+        
+    </body>
+
+</html>

@@ -19,7 +19,7 @@
 
         <link href="styles/card.css" rel="stylesheet" type="text/css" />
 
-    </head>
+</head>
 
     <body>
         
@@ -75,10 +75,15 @@
                                 <td class="border"><br /></td>
                             </tr>
                         </table>
-                        <table id="price" class="text text4" ng-if="show_add">
+                        <table id="price" class="text text4" ng-if="show_add" ng-init="colect={}">
                             <tr>
-                                <td class="border"><img src="imgs/add_collection.png" class="add" />Adicionar à coleção</td>
+                                <td class="border" ng-click="collection()"><img src="imgs/add_collection.png" class="add" />Adicionar à coleção</td>
                             </tr>
+                            <div class="text text3" id="add_collection" ng-show="add_now" ng-repeat="set in card[0].sets" ng-if="set.id == $parent.show">
+                                Adicionar <input type="number" value="1" name="cards" class="text text4" id="add_num" ng-model="colect.n" ng-init="colect.n= 1"/> <span ng-if="card[0].name_br != null">{{card[0].name_br}}</span><span ng-if="card[0].name_br == null">{{card[0].name_us}}</span> de <span ng-if="set.set_br != null">{{set.set_br}}</span><span ng-if="set.set_br == null">{{set.set_us}}</span> à sua coleção.<br />
+                                <div class="btn text text4 confirm" ng-click="confirm(set.id, colect.n)">Confirmar</div>
+                                <div class="btn text text4 error" ng-click="cancel()">Cancelar</div>
+                            </div>
                         </table>
                     </td>
                     <td id="top_table_right">
@@ -111,7 +116,11 @@
             </div>
 
             <div id="flag">
-                <img src="imgs/alert.png" id="alert" ng-if="text_br == null && text_us != null" />
+                <img src="imgs/alert.png" id="alert" ng-if="text_br == null && text_us != null" ng-click="alert()" ng-show="!show_alert" />
+                <div class="text text3 alert_box" id="add_collection" ng-show="show_alert">
+                    Não possuímos o texto em português para essa carta em nosso banco de dados, o texto exibido em inglês é o texto oficial da carta.<br />
+                    <div class="btn text text4" ng-click="alert()">Ok</div>
+                </div>
 
                 <img src="imgs/us.png" id="lang" ng-if="lang == 'br'" ng-click="$parent.lang = 'us'" />
                 <img src="imgs/br.png" id="lang" ng-if="lang == 'us'" ng-click="$parent.lang = 'br'" />

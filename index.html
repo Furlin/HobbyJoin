@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="index">
+<html ng-app="login">
 
     <head>
 
@@ -15,10 +15,9 @@
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charset="utf-8">
         
-        <script src="info/index.js"></script>
+        <script src="info/cadastro.js"></script>
 
-        <link href="styles/index.css" rel="stylesheet" type="text/css" />
-        <link href="styles/search.css" rel="stylesheet" type="text/css" />
+        <link href="styles/cadastro.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -30,18 +29,60 @@
         </div>
         <div class="line dark_blue"></div>
         
-        <div id="search" ng-controller="TypeCtrl">
-            <form action="search.html" method="get">
-                <input type="text" placeholder="Buscar carta" autocomplete="off" name="search" class="text text2" ng-model="selected" typeahead="card as card.n for card in cards | filter:$viewValue | limitTo:8" typeahead-min-length="3" typeahead-on-select="console()" />
+        <div id="form" ng-controller="LoginCtrl">
+            
+            <form method="get" name="myForm" ng-submit="go($event)" action="cadastrar.html" >
+
+                <div class="div_input">
+                    <input type="text" placeholder="Nome completo" autocomplete="off" name="nome" ng-model="nome" ng-minlength="10" ng-maxlength="150" class="text text2 input_field" />
+                    <div class="error text text3" ng-show="myForm.nome.$error.minlength">
+                        Por favor informar seu nome completo.
+                    </div>
+
+                    <div class="error text text3" ng-show="myForm.nome.$error.maxlength">
+                        Nome muito longo, por favor abreviar onde possível.
+                    </div>
+                </div>
+                
+                <div class="div_input">
+                    <input type="email" placeholder="E-mail" autocomplete="off" name="email" ng-model="email" class="text text2 input_field" />
+                    <div class="error text text3" ng-show="myForm.email.$error.email">
+                        Por favor informar um e-mail válido.
+                    </div>
+                </div>
+
+                <div class="div_input text text2">
+                    CEP<input type="number" autocomplete="off" name="cep1" ng-model="cep1" class="text text2 cep1" ng-minlength="5" ng-maxlength="5" />-<input type="number" autocomplete="off" name="cep2" ng-model="cep2" class="text text2 cep2" ng-minlength="3" ng-maxlength="3" />
+                    <div class="error text text3" ng-show="myForm.cep1.$error.number || myForm.cep2.$error.number || myForm.cep1.$error.minlength || myForm.cep1.$error.maxlength || myForm.cep2.$error.minlength || myForm.cep2.$error.maxlength">
+                    Por favor informar um CEP válido.
+                </div>
+                </div>
+
+                <div class="div_input">
+                    <input type="password" placeholder="Senha" autocomplete="off" name="senha1" ng-model="senha1" ng-minlength="6" class="text text2 input_field" />
+                    <div class="error text text3" ng-show="myForm.senha1.$error.minlength">
+                        A senha deve ter ao menos 6 caracteres.
+                    </div>
+                </div>
+                
+                <div class="div_input">
+                    <input type="password" placeholder="Confirmar Senha" autocomplete="off" name="senha2" ng-model="senha2" ng-minlength="6"  class="text text2 input_field" />
+                    <div class="error text text3" ng-show="myForm.senha1.$viewValue != undefined && myForm.senha2.$viewValue != undefined && myForm.senha1.$viewValue != myForm.senha2.$viewValue">
+                        As senhas informadas não são iguais.
+                    </div>
+                </div>
+
+                <div class="div_input">
+                    <input type="submit" autocomplete="off" name="send" class="text text2 input_field submit" value="Cadastrar" />
+                </div>
+            
             </form>
+            
+            <div class="div_input" ng-click="goto('login')">
+                <div class="text text2 login">Fazer login</div>
+            </div>
+            
         </div>
-        
-        <ul ng-controller="MenuCtrl">
-            <li ng-repeat="item in menu" class="item text text2 line2" ng-click="goto(item.link)">
-                <img src="imgs/{{item.link}}.png" class=img />
-                {{item.text}}
-            </li>
-        </ul>
         
     </body>
 

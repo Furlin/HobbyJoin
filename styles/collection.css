@@ -1,0 +1,15 @@
+#add_num {
+    width: 30px;
+}
+
+@media (min-width:640px) {
+    #add_num {
+        width: 60px;
+    }
+}
+
+@media (min-width:480px)  and (max-width:639px){
+    #add_num {
+        width: 45px;
+    }
+}

@@ -1,7 +1,7 @@
 angular.module('card', ['ngTouch'])
 .controller('HomeCtrl', ['$scope', '$window', function($scope, $window) {
     $scope.goHome = function () {
-        $window.location.href = 'index.html';  
+        $window.location.href = 'menu.html';  
     };
 }])
 .config(['$httpProvider', function($httpProvider) {
