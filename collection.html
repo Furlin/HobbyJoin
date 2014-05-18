@@ -42,9 +42,9 @@
             
             <div id="deck">
                 
-                <div class="bold">TOTAL DA COLEÇÃO ({{deck.cards}} CARTAS)</div>
+                <div class="bold" ng-show="deck.show">TOTAL DA COLEÇÃO ({{deck.cards}} CARTAS)</div>
             
-                <div class="block" ng-if="deck.land != 0">
+                <div class="block" ng-if="deck.land != 0" ng-show="deck.show">
                     <div class="cards" ng-repeat="card in deck.lands">
                         <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
@@ -99,7 +99,7 @@
                     <div class="total bold">{{deck.land}} Terrenos</div>
                 </div>
                 
-                <div class="block" ng-if="deck.creature != 0">
+                <div class="block" ng-if="deck.creature != 0" ng-show="deck.show">
                     <div class="cards" ng-repeat="card in deck.creatures">
                         <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
@@ -156,7 +156,7 @@
                     <div class="total bold">{{deck.creature}} Criaturas</div>
                 </div>
             
-                <div class="block" ng-if="deck.plane != 0">
+                <div class="block" ng-if="deck.plane != 0" ng-show="deck.show">
                     <div class="cards" ng-repeat="card in deck.planes">
                         <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}}
@@ -211,7 +211,7 @@
                     <div class="total bold">{{deck.plane}} Planinaltas</div>
                 </div>
             
-                <div class="block" ng-if="deck.other != 0">
+                <div class="block" ng-if="deck.other != 0" ng-show="deck.show">
                     <div class="cards" ng-repeat="card in deck.others">
                         <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
                             {{card.num}} {{card.name_br}} ({{card.code}})
@@ -266,7 +266,7 @@
                     <div class="total bold">{{deck.other}} Mágicas</div>
                 </div>
                 
-                <div class="block side" ng-if="deck.side != 0">
+                <div class="block side" ng-if="deck.side != 0" ng-show="deck.show">
                     <div class="bold sidet">Sideboard</div>
                     <div class="cards" ng-repeat="card in deck.sides">
                         <div ng-click="card.show = !card.show" ng-if="card.name_br != null" class="card_name">
@@ -323,7 +323,14 @@
                 </div>
                 
             </div>
-                
+            
+            <div class="div_input text text3 msg" ng-show="err == true">
+                Não foi possível conectar ao servidor, verifique sua conexão com a internet.
+            </div>
+            
+            <div class="div_input" ng-show="err == true">
+                <div class="text text3 login" ng-click="refr()">Tentar Novamente</div>
+            </div>    
         </div>
         
     </body>

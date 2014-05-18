@@ -8,6 +8,19 @@ body, div, li, img {
     user-select: none;
 }
 
+.div_input {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+.msg {
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body {
     font-size: 100%;
     width: 100%;
