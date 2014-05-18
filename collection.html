@@ -35,10 +35,10 @@
             <div class="line dark_blue"></div>
             
             <div class="info">
-                <div class="bold">{{deck.deck}}</div>
+                <div class="bold" >{{deck.deck}}</div>
             </div>
 
-            <div class="line light_blue"></div>
+            <div class="line light_blue" ng-show="deck.show"></div>
             
             <div id="deck">
                 
@@ -59,10 +59,6 @@
                                     <td><div class="spacer"></div></td>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="mid">
                                     <td class="left">Preço Médio</td>
                                     <td class="right">{{card.avrg}}</td>
@@ -76,9 +72,6 @@
                                 <tr>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="text4 error">
                                     <td>Carta não disponível</td>
                                 </tr>
@@ -90,7 +83,7 @@
                                 <input type="number" name="num" class="text text4" id="add_num" ng-model="card.num" />
                                 <input type="hidden" name="id" value="{{card.id}}" />
                                 <input type="hidden" name="set" value="{{card.set}}" />
-                                <input type="hidden" name="user" value="1" />                        
+
                                 <input type="submit" value="Alterar" class="text text4" />
                             </form>
                             <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
@@ -116,10 +109,6 @@
                                     <td><div class="spacer"></div></td>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="mid">
                                     <td class="left">Preço Médio</td>
                                     <td class="right">{{card.avrg}}</td>
@@ -133,9 +122,6 @@
                                 <tr>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="text4 error">
                                     <td>Carta não disponível</td>
                                 </tr>
@@ -147,7 +133,6 @@
                                 <input type="number" name="num" class="text text4" id="add_num" ng-model="card.num" />
                                 <input type="hidden" name="id" value="{{card.id}}" />
                                 <input type="hidden" name="set" value="{{card.set}}" />
-                                <input type="hidden" name="user" value="1" />                        
                                 <input type="submit" value="Alterar" class="text text4" />
                             </form>
                             <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
@@ -171,10 +156,6 @@
                                     <td><div class="spacer"></div></td>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="mid">
                                     <td class="left">Preço Médio</td>
                                     <td class="right">{{card.avrg}}</td>
@@ -188,9 +169,6 @@
                                 <tr>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="text4 error">
                                     <td>Carta não disponível</td>
                                 </tr>
@@ -202,7 +180,7 @@
                                 <input type="number" name="num" class="text text4" id="add_num" ng-model="card.num" />
                                 <input type="hidden" name="id" value="{{card.id}}" />
                                 <input type="hidden" name="set" value="{{card.set}}" />
-                                <input type="hidden" name="user" value="1" />                        
+
                                 <input type="submit" value="Alterar" class="text text4" />
                             </form>
                             <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
@@ -226,10 +204,6 @@
                                     <td><div class="spacer"></div></td>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="mid">
                                     <td class="left">Preço Médio</td>
                                     <td class="right">{{card.avrg}}</td>
@@ -243,9 +217,6 @@
                                 <tr>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="text4 error">
                                     <td>Carta não disponível</td>
                                 </tr>
@@ -257,7 +228,7 @@
                                 <input type="number" name="num" class="text text4" id="add_num" ng-model="card.num" />
                                 <input type="hidden" name="id" value="{{card.id}}" />
                                 <input type="hidden" name="set" value="{{card.set}}" />
-                                <input type="hidden" name="user" value="1" />                        
+
                                 <input type="submit" value="Alterar" class="text text4" />
                             </form>
                             <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
@@ -282,10 +253,6 @@
                                     <td><div class="spacer"></div></td>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="mid">
                                     <td class="left">Preço Médio</td>
                                     <td class="right">{{card.avrg}}</td>
@@ -299,9 +266,6 @@
                                 <tr>
                                     <td><div class="spacer"></div></td>
                                 </tr>
-                                <tr>
-                                    <td><img src="imgs/close.png" class="close" ng-click="card.show = false" /></td>
-                                </tr>
                                 <tr class="text4 error">
                                     <td>Carta não disponível</td>
                                 </tr>
@@ -313,7 +277,7 @@
                                 <input type="number" name="num" class="text text4" id="add_num" ng-model="card.num" />
                                 <input type="hidden" name="id" value="{{card.id}}" />
                                 <input type="hidden" name="set" value="{{card.set}}" />
-                                <input type="hidden" name="user" value="1" />                        
+
                                 <input type="submit" value="Alterar" class="text text4" />
                             </form>
                             <div class="ir" ng-click="goTo('card.html?id={{card.id}}');">Ver detalhes da carta.</div>
