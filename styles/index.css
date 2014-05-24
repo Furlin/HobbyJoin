@@ -4,8 +4,12 @@
 }
 
 #logo_large img {
-    margin-top: 16px;
-    height: 48px;
+    margin-top: 11px;
+    height: 58px;
+}
+
+.light_blue {
+    background-color: #007b9a;
 }
 
 .item {
@@ -31,8 +35,8 @@
     }
     
     #logo_large img {
-        margin-top: 33px;
-        height: 94px;
+        margin-top: 23px;
+        height: 114px;
     }
     
     .img {
@@ -55,8 +59,8 @@
     }
     
     #logo_large img {
-        margin-top: 25px;
-        height: 70px;
+        margin-top: 17px;
+        height: 86px;
     }
     
     .img {
