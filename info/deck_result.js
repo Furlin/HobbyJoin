@@ -19,7 +19,8 @@ angular.module('card', ['ngTouch'])
     $http.get('http://furlin.org/hobby/deck_result.php'+$window.location.search)
     .success(function (data, status, headers, config) {
         $scope.loading = false;
-        if(data.noresult == true)
+        console.log(data);
+        if(data == '')
             $scope.noresult = true;
         else
             $scope.decks = data;

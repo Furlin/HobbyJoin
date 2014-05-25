@@ -18,11 +18,11 @@ angular.module('card', ['ngTouch'])
     }
     $http.get('http://furlin.org/hobby/adv.php'+$window.location.search)
     .success(function (data, status, headers, config) {
-        $scope.cards = data;
-        if(data.noresult == true)
+        $scope.loading = false;
+        if(data.length == 0)
             $scope.noresult = true;
         else
-            $scope.decks = data;
+            $scope.cards = data;
         $scope.goTo = function (link) {
             $window.location.href = link;  
         };
