@@ -13,10 +13,16 @@ angular.module('card', ['ngTouch'])
     $scope.refr = function () {
         $window.location.href = 'deck_result.html'+$window.location.search;
     }
+    $scope.goBack = function () {
+        $window.location.href = 'deck_search.html';
+    }
     $http.get('http://furlin.org/hobby/deck_result.php'+$window.location.search)
     .success(function (data, status, headers, config) {
         $scope.loading = false;
-        $scope.decks = data;
+        if(data.noresult == true)
+            $scope.noresult = true;
+        else
+            $scope.decks = data;
         $scope.goTo = function (link) {
             $window.location.href = link;  
         };

@@ -57,6 +57,13 @@
             <div class="div_input" ng-show="err == true">
                 <div class="text text3 login" ng-click="refr()">Tentar Novamente</div>
             </div>    
+                            <div class="div_input text text3 msg" ng-show="noresult == true">
+                    Não foi encontrado nenhum resultado para essa busca.
+                </div>
+            
+                <div class="div_input" ng-show="noresult == true">
+                    <div class="text text3 login" ng-click="goBack()">Fazer uma nova busca</div>
+                </div>  
         </div>
         
     </body>

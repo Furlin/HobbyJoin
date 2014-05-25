@@ -9,9 +9,20 @@ angular.module('card', ['ngTouch'])
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }])
 .controller('ResultCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
+    $scope.loading = true;
+    $scope.refr = function () {
+        $window.location.href = 'search.html'+$window.location.search;
+    }
+    $scope.goBack = function () {
+        $window.location.href = 'adv_search.html';
+    }
     $http.get('http://furlin.org/hobby/adv.php'+$window.location.search)
     .success(function (data, status, headers, config) {
         $scope.cards = data;
+        if(data.noresult == true)
+            $scope.noresult = true;
+        else
+            $scope.decks = data;
         $scope.goTo = function (link) {
             $window.location.href = link;  
         };
@@ -26,6 +37,7 @@ angular.module('card', ['ngTouch'])
         };
     })
     .error(function (data, status, headers, config) {
-        console.log('error');
+        $scope.loading = false;
+        $scope.err = true;
     });
 }]);

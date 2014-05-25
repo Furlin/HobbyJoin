@@ -39,6 +39,17 @@ ul {
     height: 6px;
 }
 
+.login {
+    background-color: #03c;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    padding: 3px 0;
+    border: 1px solid #000;
+    border-radius: 8px;
+    color: #fff;
+}
+
 .fake {
     display: none;
 }
@@ -84,6 +95,12 @@ ul {
         height: 48px;
         padding: 22px;
     }
+    
+    .login {
+        width: 96%;
+        padding: 5px 0;
+        border-radius: 12px;
+    }
 
 }
 
@@ -104,5 +121,11 @@ ul {
     #menu {
         height: 32px;
         padding: 19px;
+    }
+    
+    .login {
+        width: 95%;
+        padding: 4px 0;
+        border-radius: 10px;
     }
 }
