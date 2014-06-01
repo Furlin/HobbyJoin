@@ -15,5 +15,7 @@
     </author>
 
     <access origin="http://furlin.org" subdomains="true" />
+        
+    <plugin name="Storage" value="org.apache.cordova.Storage" />
 
 </widget>
