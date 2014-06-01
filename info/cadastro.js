@@ -1,6 +1,6 @@
 angular.module('login', ['ngTouch'])
 .controller('LoginCtrl', ['$scope', '$http', '$sce', '$window', function($scope, $http, $sce, $window) {
-    if($window.localStorage.getItem('user') !== null)
+    if($window.localStorage.getItem('user') != null && $window.localStorage.getItem('user') != '' && $window.localStorage.getItem('user') != 'undefined')
         $window.location.href = 'menu.html';
     else
     {
