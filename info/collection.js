@@ -24,7 +24,8 @@ angular.module('card', ['ngTouch'])
     $scope.refr = function () {
         $window.location.href = 'collection.html'+$window.location.search;
     }
-    //$scope.deck = {'deck':'http://furlin.org/hobby/collection.php'+$window.location.search+sign+'user='+$window.localStorage.getItem('user')};
+    $scope.deck = {'deck':'http://furlin.org/hobby/collection.php'+$window.location.search+sign+'user='+$window.localStorage.getItem('user')};
+    /*
     $http.get('http://furlin.org/hobby/collection.php'+$window.location.search+sign+'user='+$window.localStorage.getItem('user'))
     .success(function (data, status, headers, config) {
         $scope.deck = data;
@@ -37,5 +38,5 @@ angular.module('card', ['ngTouch'])
     .error(function (data, status, headers, config) {
         $scope.err = true;
         $scope.deck = {'deck':''};
-    });
+    });*/
 }]);
